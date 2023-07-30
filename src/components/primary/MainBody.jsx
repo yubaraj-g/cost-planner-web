@@ -38,6 +38,10 @@ const MainBody = () => {
         setTotal(cost)
     }, [list])
 
+    const clearExpenses = () => {
+        setList([])
+    }
+
     return (
         <section className="text-gray-600 body-font relative">
             <div className="container px-5 pt-14 pb-20 mx-auto">
@@ -49,7 +53,7 @@ const MainBody = () => {
                     <div className='w-full flex gap-8'>
                         <UserDetails />
 
-                        <div className="lg:w-3/4 md:w-2/4 mx-auto flex max-h-[500px] overflow-y-scroll border rounded p-4">
+                        <div className="lg:w-3/4 md:w-2/4 mx-auto flex max-h-[500px] overflow-y-auto border rounded p-4">
                             <div className='w-full mx-auto flex flex-col items-end justify-start gap-2 h-fit'>
                                 {
                                     // rendering the cost details divs that gets added.
@@ -72,6 +76,7 @@ const MainBody = () => {
                             </div>
                         </div>
                         <button className='flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg h-fit'>Save Session</button>
+                        <button className='flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg h-fit' onClick={clearExpenses}>Clear Expenses</button>
                     </div>
                 </div>
             </div>

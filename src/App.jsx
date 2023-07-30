@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Login from "./pages/Login"
 
 const CostPlanner = lazy(() => import("./pages/CostPlanner"))
@@ -8,8 +8,16 @@ const App = () => {
 
   const getUser = (data) => {
     setUser(data)
-    console.log(data)
+    // console.log(data.accessToken)
+    localStorage.setItem("signedToken", data.accessToken)
+    localStorage.setItem("user", data)
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("signedToken") !== '' && localStorage.getItem("user") !== null) {
+      setUser(localStorage.getItem("user"))
+    }
+  }, [])
 
   return (
     <>

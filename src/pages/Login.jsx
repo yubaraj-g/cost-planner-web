@@ -66,12 +66,12 @@ const Login = ({ getUser }) => {
   }
 
   return (
-    <div className='flex flex-col w-full h-screen justify-center items-center border bg-gradient-to-r from-blue-200 to-cyan-200 gap-4 relative'>
+    <div className='flex flex-col w-full h-screen justify-center items-center border bg-gradient-to-r from-rose-100 to-teal-100 gap-4 relative'>
       <h1 className='text-gray-600 font-bold text-4xl absolute top-16'>Cost Manage</h1>
 
       <div id="recaptcha-container"></div>
 
-      <div className='bg-gradient-to-r from-blue-200 to-cyan-200 w-96 h-fit flex flex-col shadow-2xl items-center justify-start gap-6 p-6'>
+      <div className='bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 w-96 h-fit flex flex-col shadow-2xl items-center justify-start gap-6 p-6'>
         <h3 className='text-gray-700 text-xl font-medium'>{showOtpInput ? "Input OTP" : "Please input your phone number"}</h3>
         <div className='flex w-full justify-center items-center'>
           {
